@@ -1,0 +1,32 @@
+{
+  "name": "sbh",
+  "version": "1.0.0",
+  "description": "Invoice software.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=dev nodemon index.js",
+    "prod": "NODE_ENV=prod nodemon index.js"
+  },
+  "author": "sanket vanani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.19",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.0",
+    "react-form-input-validation": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

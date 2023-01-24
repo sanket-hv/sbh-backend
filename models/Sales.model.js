@@ -32,6 +32,10 @@ const SaleSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "User is required"],
     },
+    pageSize: {
+      type: String,
+      default: "A4",
+    },
   },
   {
     timestamps: true,

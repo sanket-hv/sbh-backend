@@ -26,8 +26,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static("public"));
-app.use(express.static("sd417"));
 
 app.get("/sbh", (req, res) => {
   successResponseWithData(res, "Working", { message: "ok" });
@@ -38,14 +36,6 @@ const api = require("./apis/api");
 
 // Using API
 app.use("/api/v1", api);
-
-app.use("/sd417/*", (req, res) =>
-  res.sendFile(path.join(__dirname, "sd417", "index.html"))
-);
-
-app.use("/*", (req, res) =>
-  res.sendFile(path.join(__dirname, "public", "index.html"))
-);
 
 app.listen(PORT, (err) => {
   if (err) {

@@ -97,7 +97,7 @@ const getAllSales = async (req, res) => {
 
     let sales = await Sales.find(query).populate({
       path: "party",
-      select: { _id: 0, partyName: 1 },
+      select: { _id: 0, partyName: 1, gstNo: 2 },
     });
 
     if (string)

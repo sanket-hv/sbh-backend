@@ -1,0 +1,1212 @@
+{
+	"info": {
+		"_postman_id": "72bc30b8-c454-404a-b8a8-47db22709837",
+		"name": "SBH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14538583"
+	},
+	"item": [
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "Update Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sales\": {\n        \"_id\": \"63ca1e55671bca1866a9b292\",\n        \"disPer\": 5,\n        \"disAmt\": 112.5,\n        \"cgstPer\": 2.5,\n        \"cgstAmt\": 53.44,\n        \"sgstPer\": 2.5,\n        \"sgstAmt\": 53.44,\n        \"igstPer\": 0,\n        \"igstAmt\": 0,\n        \"netAmt\": 2244.38,\n        \"roundAmt\": 2245,\n        \"challanNo\": \"45784\",\n        \"totalQty\": 15,\n        \"totalAmt\": 2250,\n        \"remarks\": \"Dynamic Remarks\",\n        \"salesNo\": 2\n    },\n    \"salesDetails\": [\n        {\n            \"_id\": \"63ca1e55671bca1866a9b294\",\n            \"product\": \"product Two\",\n            \"qty\": 15,\n            \"rate\": 150,\n            \"amt\": 2250\n        },\n         {\n            \"_id\": \"63c9325990d2c98c1018c10e\",\n            \"product\": \"hello moto\",\n            \"qty\": 1500,\n            \"rate\": 15,\n            \"amt\": 14901248\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/sales/updateSalesDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"sales",
+								"updateSalesDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sales Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"salesId\":\"63c9325990d2c98c1018c10c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/sales/getSalesDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"sales",
+								"getSalesDetails"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get Admin Details",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Admin",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/update",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/user/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/user/delete",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"user",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Active User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user/activate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"user",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deactive User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/dashboard/user/deactivate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"dashboard",
+										"user",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Details",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user/details",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"dashboard",
+										"user",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Sigin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"testUser\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/signin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Account Year",
+					"item": [
+						{
+							"name": "Get All Years",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accYear/getAll",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accYear",
+										"getAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Years",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accYear/addNew",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accYear",
+										"addNew"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Sigin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"testUser\",\n    \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/signin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Welcome User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/dashboard",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"dashboard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Party",
+					"item": [
+						{
+							"name": "Create Party",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Party Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ValidateParty",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Party",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sales",
+					"item": [
+						{
+							"name": "Create Sales",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/sales/createSales",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sales",
+										"createSales"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get New SalesNo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Sales",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/sales/getAllSales",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sales",
+										"getAllSales"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Sales Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/sales/getSalesDetails",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sales",
+										"getSalesDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Sales Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/sales/updateSalesDetails",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sales",
+										"updateSalesDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Sales",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Sales Item",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Party Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/sales/getPartyWiseProducts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"sales",
+										"getPartyWiseProducts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/party/validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"party",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Report",
+					"item": [
+						{
+							"name": "Get GST Report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/report/gst",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"report",
+										"gst"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/report/product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"report",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"product",
+										"63cf627d09006c081f7e7802"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user/updateUser",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"updateUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

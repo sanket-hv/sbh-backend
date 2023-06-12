@@ -6,6 +6,7 @@ const {
   getAllSales,
   getSalesDetails,
   updateSalesDetails,
+  updateSalesRoundAmount,
   deleteSales,
   deleteSalesDetailsItem,
   getPartyWiseProducts,
@@ -20,6 +21,8 @@ router.post("/getAllSales", welcome, getAllSales);
 router.post("/getSalesDetails", welcome, getSalesDetails);
 
 router.put("/updateSalesDetails", welcome, updateSalesDetails);
+
+router.put("/updateRoundAmount", updateSalesRoundAmount);
 
 router.delete("/deleteSales", welcome, deleteSales);
 

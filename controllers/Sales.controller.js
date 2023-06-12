@@ -9,6 +9,7 @@ const {
 } = require("../helpers/apiResponses");
 
 const mongoose = require("../config/db");
+const Sale = require("../models/Sales.model");
 
 const getNewSalesNo = async (req, res) => {
   try {
@@ -202,6 +203,28 @@ const updateSalesDetails = async (req, res) => {
   }
 };
 
+const updateSalesRoundAmount = async (req, res) => {
+  try {
+    let { body, query } = req;
+    let { _id } = query;
+
+    // update salesDetails
+    let data = await Sale.findByIdAndUpdate(
+      {
+        _id,
+      },
+      body,
+      { new: true, returnDocument: "after" }
+    );
+    return successResponseWithData(res, "Sales updated successfully", {
+      data: data,
+    });
+  } catch (err) {
+    console.error(err);
+    return ErrorResponse(res, err.message);
+  }
+};
+
 const deleteSales = async (req, res) => {
   try {
     let {
@@ -280,4 +303,5 @@ module.exports = {
   deleteSales,
   deleteSalesDetailsItem,
   getPartyWiseProducts,
+  updateSalesRoundAmount,
 };

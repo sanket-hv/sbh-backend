@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "72bc30b8-c454-404a-b8a8-47db22709837",
+		"_postman_id": "8d5dee43-f8bf-4016-86f9-3db276614502",
 		"name": "SBH",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14538583"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26194544"
 	},
 	"item": [
 		{
@@ -14,13 +14,9 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI",
-									"type": "string"
-								}
-							]
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI"
+							}
 						},
 						"method": "PUT",
 						"header": [],
@@ -33,8 +29,32 @@
 								}
 							}
 						},
+						"url": "http://localhost:8000/api/v1/sales/updateSalesDetails"
+					},
+					"response": []
+				},
+				{
+					"name": "Update RoundAmount",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NjNhNjk4YjI2Y2U3NTgyOTI5YWNhYSIsInVzZXJOYW1lIjoiZGVuaXNlLmFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY4NjI5MDUwMCwiZXhwIjoxNzE3ODQ4MTAwfQ.gx6K7WvLFFXIt3hiSYxXHtsUUUKrWf8G94Mq18yPqQ4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roundAmt\": 2245\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/sales/updateSalesDetails",
+							"raw": "http://localhost:8000/api/v1/sales/updateRoundAmount?_id=6255b6590767385da04c90da",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -44,7 +64,13 @@
 								"api",
 								"v1",
 								"sales",
-								"updateSalesDetails"
+								"updateRoundAmount"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "6255b6590767385da04c90da"
+								}
 							]
 						}
 					},
@@ -55,13 +81,9 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI",
-									"type": "string"
-								}
-							]
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQxMjA4NTQsImV4cCI6MTY3NDIwNzI1NH0.DV64EQ0v5is39H32XoNvFSbDmNAy5WHgxkRIHKGf2wI"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -74,20 +96,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:8000/api/v1/sales/getSalesDetails",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"v1",
-								"sales",
-								"getSalesDetails"
-							]
-						}
+						"url": "http://localhost:8000/api/v1/sales/getSalesDetails"
 					},
 					"response": []
 				}
@@ -102,19 +111,24 @@
 						{
 							"name": "Get Admin Details",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2OTI1OTQyMDIsImV4cCI6MTY5MjY4MDYwMn0.MBVw02Sjq2F2CyIEHYpnxQjQXCrdF7qrYhSxKjt3b5k"
+									}
+								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}admin"
 							},
 							"response": []
 						},
@@ -123,18 +137,16 @@
 							"request": {
 								"method": "PUT",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/update",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"update"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"username\": \"admin\",\r\n        \"firmName\": \"firm\",\r\n        \"mobileNo\": \"9598598685\",\r\n        \"gstNo\": \"djhjf45kjdjk34\",\r\n        \"panNo\": \"jknfj5565f\",\r\n        \"address\": \"address\",\r\n        \"state\": \"Gujarat\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}admin/update"
 							},
 							"response": []
 						}
@@ -148,19 +160,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/user/create",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"user",
-										"create"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userType\": \"user\",\r\n    \"username\": \"testUser\",\r\n    \"firmName\": \"firmName\",\r\n    \"password\": \"123\",\r\n    \"mobileNo\": \"9598598888\",\r\n    \"gstNo\": \"djhjf45kjdjk78\",\r\n    \"panNo\": \"DFnfj5565f\",\r\n    \"address\": \"test Address\",\r\n    \"state\": \"Gujarat\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}admin/user/create"
 							},
 							"response": []
 						},
@@ -169,19 +178,16 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/user/delete",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"user",
-										"delete"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\": \"64e2f6dcb5618b337ccd21a8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}admin/user/delete"
 							},
 							"response": []
 						}
@@ -195,20 +201,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user/activate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"dashboard",
-										"user",
-										"activate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"64e2f6dcb5618b337ccd21a8\",\r\n    \"planDuration\":\"\",\r\n    \"amount\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}admin/dashboard/user/activate"
 							},
 							"response": []
 						},
@@ -217,19 +219,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/dashboard/user/deactivate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"dashboard",
-										"user",
-										"deactivate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"64e2f6dcb5618b337ccd21a8\",\r\n    \"reason\":\"test reason\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}dashboard/user/deactivate"
 							},
 							"response": []
 						},
@@ -238,19 +237,7 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"dashboard",
-										"user"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/admin/dashboard/user"
 							},
 							"response": []
 						},
@@ -259,20 +246,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/admin/dashboard/user/details",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"admin",
-										"dashboard",
-										"user",
-										"details"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\":\"63c65ebd51ac6b4112f4a702\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v1/admin/dashboard/user/details"
 							},
 							"response": []
 						}
@@ -295,21 +278,37 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/signin",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"signin"
-									]
-								}
+								"url": "{{baseUrl}}signin"
 							},
 							"response": []
 						}
 					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MWZhZGE5NWU5YzU4ZDFhZjhhZjkiLCJpYXQiOjE2OTI1OTU1NzAsImV4cCI6MTY5MjY4MTk3MH0.-Lv-l2mrh2QkRMLNs5QtOxMy3U6Tdp8EEMkihsD5jMM"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -322,30 +321,9 @@
 						{
 							"name": "Get All Years",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/accYear/getAll",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"accYear",
-										"getAll"
-									]
-								}
+								"url": "{{baseUrl}}accYear/getAll"
 							},
 							"response": []
 						},
@@ -354,18 +332,7 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/accYear/addNew",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"accYear",
-										"addNew"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/accYear/addNew"
 							},
 							"response": []
 						}
@@ -388,17 +355,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/signin",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"signin"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/signin"
 							},
 							"response": []
 						}
@@ -412,27 +369,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/dashboard",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"dashboard"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/dashboard"
 							},
 							"response": []
 						}
@@ -446,17 +389,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"partyName\": \"PARTYEXTRA\",\r\n  \"mobileNo\": \"1231231555\",\r\n  \"discount\": 5,\r\n  \"gstNo\": \"JDHSFGSDHFG8250\",\r\n  \"panNo\": \"KSDHFKFDG9212\",\r\n  \"address\": \"DUMMY ADDRESS\",\r\n  \"state\": \"Haryana\",\r\n  \"city\": \"Gurgaon\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}party"
 							},
 							"response": []
 						},
@@ -465,27 +407,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/party"
 							},
 							"response": []
 						},
@@ -494,28 +422,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/party/63c92bd0b3525388401ad591"
 							},
 							"response": []
 						},
@@ -524,88 +437,58 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "PUT",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"partyName\": \"PARTYEXTRA\",\r\n  \"mobileNo\": \"1231231555\",\r\n  \"discount\": 5,\r\n  \"gstNo\": \"JDHSFGSDHFG8250\",\r\n  \"panNo\": \"KSDHFKFDG9212\",\r\n  \"address\": \"DUMMY ADDRESS\",\r\n  \"state\": \"Haryana\",\r\n  \"city\": \"Gurgaon\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v1/party/63cf627d09006c081f7e7802"
 							},
 							"response": []
 						},
 						{
 							"name": "ValidateParty",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/validate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"validate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"field\":\"gstNo\",\r\n    \"value\":\"kshghghgjbdfg5454\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}party/validate"
 							},
 							"response": []
 						},
 						{
 							"name": "Delete Party",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/validate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"validate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"partyId\":\"63c92bd0b3525388401ad591\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}party/validate"
 							},
 							"response": []
 						}
@@ -619,18 +502,16 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/sales/createSales",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"sales",
-										"createSales"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sales\": {\r\n        \"pageSize\": \"A5\",\r\n        \"disPer\": 45,\r\n        \"disAmt\": 10863,\r\n        \"cgstPer\": 2.5,\r\n        \"cgstAmt\": 331.93,\r\n        \"sgstPer\": 2.5,\r\n        \"sgstAmt\": 331.93,\r\n        \"igstPer\": 0,\r\n        \"igstAmt\": 0,\r\n        \"netAmt\": 13940.86,\r\n        \"roundAmt\": 13941,\r\n        \"party\": \"63ca25a38071e41a5f207879\",\r\n        \"challanNo\": \"45784\",\r\n        \"totalQty\": 154,\r\n        \"totalAmt\": 24140,\r\n        \"remarks\": \"Dynamic Remarks\",\r\n        \"salesDate\": \"2023-01-20T04:53:41.135Z\",\r\n        \"salesNo\": 2\r\n    },\r\n    \"salesDetails\": [\r\n        {\r\n            \"product\": \"new onther product\",\r\n            \"qty\": 150,\r\n            \"rate\": 150,\r\n            \"amt\": 22500,\r\n            \"user\": \"63c908e564350c6278027670\",\r\n            \"sales\": \"63ca1e55671bca1866a9b292\",\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v1/sales/createSales"
 							},
 							"response": []
 						},
@@ -639,87 +520,49 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party"
-									]
-								}
+								"url": "{{baseUrl}}/api/v1/party"
 							},
 							"response": []
 						},
 						{
 							"name": "Get All Sales",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/sales/getAllSales",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"sales",
-										"getAllSales"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"string\":\"string\",\r\n    \"duration\":{\r\n        \"startDate\":\"date\",\r\n        \"endDate\":\"date\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}sales/getAllSales"
 							},
 							"response": []
 						},
 						{
 							"name": "Get Sales Details",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/sales/getSalesDetails",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"sales",
-										"getSalesDetails"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"salesId\":\"63ca1e55671bca1866a9b292\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}sales/getSalesDetails"
 							},
 							"response": []
 						},
@@ -728,28 +571,22 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "PUT",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/sales/updateSalesDetails",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"sales",
-										"updateSalesDetails"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sales\": {\r\n        \"pageSize\": \"A5\",\r\n        \"disPer\": 45,\r\n        \"disAmt\": 10863,\r\n        \"cgstPer\": 2.5,\r\n        \"cgstAmt\": 331.93,\r\n        \"sgstPer\": 2.5,\r\n        \"sgstAmt\": 331.93,\r\n        \"igstPer\": 0,\r\n        \"igstAmt\": 0,\r\n        \"netAmt\": 13940.86,\r\n        \"roundAmt\": 13941,\r\n        \"party\": \"63ca25a38071e41a5f207879\",\r\n        \"challanNo\": \"45784\",\r\n        \"totalQty\": 154,\r\n        \"totalAmt\": 24140,\r\n        \"remarks\": \"Dynamic Remarks\",\r\n        \"salesDate\": \"2023-01-20T04:53:41.135Z\",\r\n        \"salesNo\": 2\r\n    },\r\n    \"salesDetails\": [\r\n        {\r\n            \"product\": \"new onther product\",\r\n            \"qty\": 150,\r\n            \"rate\": 150,\r\n            \"amt\": 22500,\r\n            \"user\": \"63c908e564350c6278027670\",\r\n            \"sales\": \"63ca1e55671bca1866a9b292\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}sales/updateSalesDetails"
 							},
 							"response": []
 						},
@@ -758,88 +595,58 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/validate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"validate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"salesId\":\"63ca1e55671bca1866a9b292\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}party/validate"
 							},
 							"response": []
 						},
 						{
 							"name": "Delete Sales Item",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/validate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"validate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"salesDetailId\":\"63ca1e55671bca1866a9b294\",\r\n    \"salesId\":\"63ca1e55671bca1866a9b294\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}party/validate"
 							},
 							"response": []
 						},
 						{
 							"name": "Party Products",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/sales/getPartyWiseProducts",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"sales",
-										"getPartyWiseProducts"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"part8y\":\"63c92bd0b3525388401ad591\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}sales/getPartyWiseProducts"
 							},
 							"response": []
 						}
@@ -853,46 +660,25 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"product name\",\r\n    \"rate\": 4.5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}product"
 							},
 							"response": []
 						},
 						{
 							"name": "Get All Product",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product"
-									]
-								}
+								"url": "{{baseUrl}}product"
 							},
 							"response": []
 						},
@@ -901,88 +687,49 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "PUT",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"product name\",\r\n    \"rate\": 4.5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}product/63cf627d09006c081f7e7802"
 							},
 							"response": []
 						},
 						{
 							"name": "Get Product Details",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"url": "{{baseUrl}}product/63cf627d09006c081f7e7802"
 							},
 							"response": []
 						},
 						{
 							"name": "Delete Product",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/party/validate",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"party",
-										"validate"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"63c92bd0b3525388401ad591\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v1/party/validate"
 							},
 							"response": []
 						}
@@ -994,90 +741,45 @@
 						{
 							"name": "Get GST Report",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/report/gst",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"report",
-										"gst"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"duration\":{\r\n        \"startDate\":\"date\",\r\n        \"endDate\":\"date\"\r\n    },\r\n    \"party\":\"63c92bd0b3525388401ad591\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}report/gst"
 							},
 							"response": []
 						},
 						{
 							"name": "Get Product Report",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/report/product",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"report",
-										"product"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"party\":\"63c92bd0b3525388401ad591\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}report/product"
 							},
 							"response": []
 						},
 						{
 							"name": "Update Product",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"url": "{{baseUrl}}product/63cf627d09006c081f7e7802"
 							},
 							"response": []
 						}
@@ -1091,122 +793,128 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E"
+									}
 								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/user",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"user"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userType\": \"user\",\r\n    \"username\": \"testUser\",\r\n    \"firmName\": \"firmName\",\r\n    \"password\": \"123\",\r\n    \"mobileNo\": \"9598598888\",\r\n    \"gstNo\": \"djhjf45kjdjk78\",\r\n    \"panNo\": \"DFnfj5565f\",\r\n    \"address\": \"test Address\",\r\n    \"state\": \"Gujarat\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}user"
 							},
 							"response": []
 						},
 						{
 							"name": "Get All Users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/user",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"user"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}user"
 							},
 							"response": []
 						},
 						{
 							"name": "Get User Details",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/product/63cf627d09006c081f7e7802",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"product",
-										"63cf627d09006c081f7e7802"
-									]
-								}
+								"url": "{{baseUrl}}user/userDetails"
 							},
 							"response": []
 						},
 						{
 							"name": "Update User",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2NzQ1NTAzODgsImV4cCI6MTY3NDYzNjc4OH0.VI00dE-R4g3Av8jSux8AV2HOzKLIu9EF9mBqZKMUc5E",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/v1/user/updateUser",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"user",
-										"updateUser"
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userType\": \"user\",\r\n    \"username\": \"testUser\",\r\n    \"firmName\": \"firmName\",\r\n    \"password\": \"123\",\r\n    \"mobileNo\": \"9598598888\",\r\n    \"gstNo\": \"djhjf45kjdjk78\",\r\n    \"panNo\": \"DFnfj5565f\",\r\n    \"address\": \"test Address\",\r\n    \"state\": \"Gujarat\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}user/updateUser"
 							},
 							"response": []
 						}
 					]
 				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2OTI1OTc0NjcsImV4cCI6MTY5MjY4Mzg2N30.tBUaSNnQNnjyQiKWm7O9ceQAQB33ImaFrXwnyMsh-i8"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2M5MDhlNTY0MzUwYzYyNzgwMjc2NzAiLCJpYXQiOjE2OTI1OTQyMDIsImV4cCI6MTY5MjY4MDYwMn0.MBVw02Sjq2F2CyIEHYpnxQjQXCrdF7qrYhSxKjt3b5k"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

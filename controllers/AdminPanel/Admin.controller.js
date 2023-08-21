@@ -27,11 +27,10 @@ const updateAdmin = async (req, res) => {
 
     successResponseWithData(res, "Admin Updated Successfully", data);
   } catch (error) {
-    console.error(error);
-    if (err.code === 11000 && err.name == "MongoError") {
+    if (error.code === 11000 && error.name == "MongoError") {
       return ErrorResponse(
         res,
-        constants[Object.keys(err.keyValue)] + " is already present."
+        constants[Object.keys(error.keyValue)] + " is already present."
       );
     }
     return ErrorResponse(res, error.message);

@@ -3,10 +3,10 @@ const apiResponses = require("../../helpers/apiResponses");
 
 const jwt = require("jsonwebtoken");
 
-const jwtKey = "iicapi_trader_access_token";
+const jwtKey = process.env.JWT_SECRET_KEY;
 const jwtExpirySeconds = 86400; //86400 second for 1 day..
 
-const jwtKeyRefresh = "iicapi_trader_refresh_token";
+const jwtKeyRefresh = process.env.JWT_REFRESH_SECRET_KEY;
 const jwtExpirySecondsRefresh = 31536000; //86400 second for 1 year..
 
 const tokenList = {};
@@ -74,9 +74,11 @@ const welcome = async (req, res, next) => {
     if (token.startsWith("Bearer ")) {
       var payload;
       try {
-        token = token.split(" ")[1];
+        token = token.split(" ")[1]
+        // console.log(token);
         payload = jwt.verify(token, jwtKey);
 
+        console.log(payload);
         let user = await User.findById(payload.userid);
 
         if (user.deletedAt) {
@@ -89,11 +91,9 @@ const welcome = async (req, res, next) => {
         if (user.userType == "user") {
           return apiResponses.unauthorizedResponse(res, `Invalid Admin Token`);
         }
-
         req.userId = payload.userid;
         next();
       } catch (e) {
-        console.log(e);
         if (e instanceof jwt.JsonWebTokenError) {
           apiResponses.ErrorResponse(res, e.message);
         } else {

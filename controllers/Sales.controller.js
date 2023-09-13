@@ -29,7 +29,7 @@ const createSales = async (req, res) => {
   session.startTransaction();
 
   try {
-    let { sales, saleDetails } = req.body;
+    let { sales, salesDetails } = req.body;
     let { userId: user } = req;
 
     if (!!!sales.party) {
@@ -49,14 +49,14 @@ const createSales = async (req, res) => {
       );
     }
 
-    let salesDetails = await saleDetails.map((details) => {
+    let updatedSalesDetails = await salesDetails.map((details) => {
       details = new SalesDetail(details);
       details.user = user;
       details.sales = salesData._id;
       return details;
     });
 
-    let salesDetailsData = await SalesDetail.insertMany(salesDetails, {
+    let salesDetailsData = await SalesDetail.insertMany(updatedSalesDetails, {
       session,
     });
 
@@ -72,7 +72,7 @@ const createSales = async (req, res) => {
     await session.commitTransaction();
     return successResponseWithData(res, "Sales saved successfully", {
       sales,
-      salesDetails,
+      salesDetails: updatedSalesDetails,
     });
   } catch (err) {
     await session.abortTransaction();
@@ -105,7 +105,7 @@ const getAllSales = async (req, res) => {
       sales = await sales.filter(
         (sale) =>
           sale.party.partyName.toLowerCase().search(string.toLowerCase()) >=
-            0 || sale.challanNo?.toLowerCase().search(string.toLowerCase()) >= 0
+          0 || sale.challanNo?.toLowerCase().search(string.toLowerCase()) >= 0
       );
 
     return successResponseWithData(res, "Sales List", sales);
@@ -152,7 +152,6 @@ const updateSalesDetails = async (req, res) => {
 
     // count sales
     let count = await Sales.countDocuments({ _id, user });
-    console.log("count", count);
     if (!count) {
       return notFoundResponse(res, "Sales not available");
     }

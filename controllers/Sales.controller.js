@@ -87,14 +87,19 @@ const getAllSales = async (req, res) => {
   try {
     let { string, duration } = req.body;
 
+    let query = {}
     if (!duration) {
-      return ErrorResponse(res, "Enter duration");
+      query = {
+        user: req.userId,
+      };
+    }
+    else {
+      query = {
+        user: req.userId,
+        salesDate: { $gte: duration.startDate, $lte: duration.endDate },
+      };
     }
 
-    let query = {
-      user: req.userId,
-      salesDate: { $gte: duration.startDate, $lte: duration.endDate },
-    };
 
     let sales = await Sales.find(query).populate({
       path: "party",
